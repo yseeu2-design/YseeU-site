@@ -300,6 +300,28 @@
     background:var(--dawn);
     display:flex; align-items:center; justify-content:center;
   }
+  .video-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:26px;
+  }
+  .video-card{
+    position:relative; display:block; border-radius:4px; overflow:hidden;
+    aspect-ratio:16/9; background:var(--ink); border:1px solid var(--line-on-dark);
+  }
+  .video-card img{width:100%; height:100%; object-fit:cover; display:block; transition:transform 0.3s ease;}
+  .video-card:hover img{transform:scale(1.05);}
+  .video-card .video-play{position:absolute; inset:0; display:flex; align-items:center; justify-content:center;}
+  .video-card .video-play .circle{
+    width:60px; height:60px; border-radius:50%; background:var(--dawn);
+    display:flex; align-items:center; justify-content:center;
+    box-shadow:0 10px 30px rgba(0,0,0,0.45);
+  }
+  .video-card .video-title{
+    position:absolute; left:0; right:0; bottom:0; padding:16px 18px;
+    background:linear-gradient(0deg, rgba(0,0,0,0.8), transparent);
+    color:#fff; font-weight:700; font-size:0.92rem;
+  }
 
   /* ---------- EVE (ORACLE) ---------- */
   .on-eve{
@@ -634,7 +656,19 @@
           </div>
         </a>
       </div>
-      <div class="card-grid reveal" style="margin-top:48px;">
+      <div class="video-grid reveal" style="margin-top:48px;">
+        <a class="video-card" href="https://www.youtube.com/watch?v=ixDzQPPf0TE" target="_blank" rel="noopener" aria-label="Watch: Chapter Reading of My Book, See The Gift Not The Curse">
+          <img src="https://img.youtube.com/vi/ixDzQPPf0TE/hqdefault.jpg" alt="Chapter Reading of My Book, See The Gift Not The Curse" loading="lazy">
+          <span class="video-play"><span class="circle"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#15121D"/></svg></span></span>
+          <span class="video-title">Chapter Reading — See The Gift, Not The Curse</span>
+        </a>
+        <a class="video-card" href="https://www.youtube.com/watch?v=jjzfAYsjyHE" target="_blank" rel="noopener" aria-label="Watch: Yvonne Cloete Full Interview, Discussing Spirit, Dimensions, Levels and more">
+          <img src="https://img.youtube.com/vi/jjzfAYsjyHE/hqdefault.jpg" alt="Yvonne Cloete Full Interview" loading="lazy">
+          <span class="video-play"><span class="circle"><svg width="22" height="22" viewBox="0 0 24 24"><path d="M8 5v14l11-7z" fill="#15121D"/></svg></span></span>
+          <span class="video-title">Full Interview — Spirit, Dimensions & More</span>
+        </a>
+      </div>
+      <div class="card-grid reveal" style="margin-top:26px;">
         <div class="card" style="background:transparent; border-color:var(--line-on-dark); color:var(--text-on-dark);">
           <span class="num" style="color:var(--dawn-light);">Daily</span>
           <h3>365 Gifts</h3>
